@@ -2,6 +2,8 @@
 
 This repository contains a simple implementation of a ping-pong messaging system using the publish-subscribe pattern using go, rust and redis.
 
+![running](./screen-shoot.png)
+
 ## Installation
 
 To use the ping-pong pubsub system in your project, follow these steps:
