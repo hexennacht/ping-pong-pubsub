@@ -10,7 +10,7 @@ pub async fn pong(mut req: tide::Request<State>) -> tide::Result<tide::Body> {
     let body: entity::PongRequest = req.body_json().await?;
     let state = req.state();
 
-    println!("Received request: {:?}", body.clone());
+    log::info!("Received request: {:?}", body.clone());
 
     let mut conn = state.client.get_connection()?;
 
