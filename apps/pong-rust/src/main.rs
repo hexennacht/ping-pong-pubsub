@@ -5,6 +5,18 @@ use tide::log;
 
 pub mod pong;
 
+#[derive(Clone)]
+pub struct State {
+    pub client: redis::Client,
+}
+
+impl State {
+    pub fn new(addr: String) -> Self {
+        let client = redis::Client::open(addr).expect("Failed to connect to Redis");
+        return State { client };
+    }
+}
+
 #[async_std::main]
 async fn main() -> tide::Result<()> {
     femme::start();
@@ -49,7 +61,7 @@ async fn main() -> tide::Result<()> {
         }
     });
 
-    let mut app = tide::new();
+    let mut app = tide::with_state(State::new("redis://127.0.0.1:6379".to_string()));
     
     app.with(tide::log::LogMiddleware::new());
 
