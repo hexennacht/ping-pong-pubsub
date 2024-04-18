@@ -1,0 +1,15 @@
+{
+    "name": "ping-go",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+      "dev": "go build -o ./ping-pong-go && ./ping-pong-go",
+      "build": "go build -o ./ping-pong-go",
+      "start": "go build -o ./ping-pong-go && ./ping-pong-go"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+  }
+  

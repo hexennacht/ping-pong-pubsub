@@ -1,0 +1,15 @@
+{
+    "name": "pong-rust",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+      "dev": "cargo build --release && ./target/release/pong-rust",
+      "build": "cargo build --release",
+      "start": "cargo build --release && ./target/release/pong-rust"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+  }
+  
